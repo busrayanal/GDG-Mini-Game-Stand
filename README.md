@@ -8,7 +8,11 @@
 
 An **offline platform with 5 mini games**, built for the GDG on Campus EBYÜ stand computer. No installation, server or libraries needed: it's written in plain HTML, CSS and JavaScript.
 
-**▶️ Play in your browser:** https://busrayanal.github.io/gdg-oyun-standi/
+**▶️ Play in your browser:** https://busrayanal.github.io/GDG-Mini-Oyun-Standi/
+
+<p align="center">
+  <img src="docs/screenshots/ana-ekran.png" width="800" alt="Home screen: game selection">
+</p>
 
 > [!NOTE]
 > The game's user interface is in Turkish.
@@ -24,6 +28,16 @@ An **offline platform with 5 mini games**, built for the GDG on Campus EBYÜ sta
 | 🧺 Bug Avcısı (*Bug Hunter*) | Dexterity | 45 s, 3 lives | Mouse / finger / ← → |
 
 Each game has its own **daily Top 10** leaderboard. Leaderboards reset automatically when the day changes; older scores are kept for export.
+
+## 📸 Screenshots
+
+| 🎈 Balloon Pop | 🎨 Color Trap |
+|:---:|:---:|
+| <img src="docs/screenshots/balon-patlat.png" width="400" alt="Balloon Pop"> | <img src="docs/screenshots/renk-tuzagi.png" width="400" alt="Color Trap"> |
+| **🎯 Bullseye** | **💡 Light Memory** |
+| <img src="docs/screenshots/tam-isabet.png" width="400" alt="Bullseye"> | <img src="docs/screenshots/isik-hafizasi.png" width="400" alt="Light Memory"> |
+| **🧺 Bug Hunter** | **📋 Game instructions screen** |
+| <img src="docs/screenshots/bug-avcisi.png" width="400" alt="Bug Hunter"> | <img src="docs/screenshots/aciklama.png" width="400" alt="Game instructions screen"> |
 
 ## ✨ Features
 
@@ -67,10 +81,11 @@ Open it from the faint **Yönetici** (*Admin*) link at the bottom right or with 
 ## 📁 Project Structure
 
 ```
-gdg-oyun-standi/
+GDG-Mini-Oyun-Standi/
 ├── index.html        # All screens (home, nickname, game, result, leaderboards, admin)
 ├── baslat.bat        # Launches the stand computer in kiosk mode
 ├── css/style.css
+├── docs/screenshots/ # README screenshots
 └── js/
     ├── core.js       # Shared helpers, score store, sounds, canvas and effects
     ├── app.js        # Platform flow, leaderboards, admin panel

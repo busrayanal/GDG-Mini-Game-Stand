@@ -8,7 +8,11 @@
 
 GDG on Campus EBYÜ standındaki bilgisayar için hazırlanmış, **internetsiz çalışan 5 mini oyunluk** bir platform. Kurulum, sunucu ya da kütüphane gerekmez; saf HTML, CSS ve JavaScript ile yazılmıştır.
 
-**▶️ Tarayıcıda oyna:** https://busrayanal.github.io/gdg-oyun-standi/
+**▶️ Tarayıcıda oyna:** https://busrayanal.github.io/GDG-Mini-Oyun-Standi/
+
+<p align="center">
+  <img src="docs/screenshots/ana-ekran.png" width="800" alt="Ana ekran: oyun seçimi">
+</p>
 
 ## 🕹️ Oyunlar
 
@@ -21,6 +25,16 @@ GDG on Campus EBYÜ standındaki bilgisayar için hazırlanmış, **internetsiz 
 | 🧺 Bug Avcısı | Beceri | 45 sn, 3 can | Fare / parmak / ← → |
 
 Her oyunun kendi **günlük Top 10** tablosu vardır. Gün değişince tablolar kendiliğinden boşalır; eski günlerin skorları dışa aktarım için saklanmaya devam eder.
+
+## 📸 Ekran Görüntüleri
+
+| 🎈 Balon Patlat | 🎨 Renk Tuzağı |
+|:---:|:---:|
+| <img src="docs/screenshots/balon-patlat.png" width="400" alt="Balon Patlat"> | <img src="docs/screenshots/renk-tuzagi.png" width="400" alt="Renk Tuzağı"> |
+| **🎯 Tam İsabet** | **💡 Işık Hafızası** |
+| <img src="docs/screenshots/tam-isabet.png" width="400" alt="Tam İsabet"> | <img src="docs/screenshots/isik-hafizasi.png" width="400" alt="Işık Hafızası"> |
+| **🧺 Bug Avcısı** | **📋 Oyun açıklama ekranı** |
+| <img src="docs/screenshots/bug-avcisi.png" width="400" alt="Bug Avcısı"> | <img src="docs/screenshots/aciklama.png" width="400" alt="Oyun açıklama ekranı"> |
 
 ## ✨ Özellikler
 
@@ -64,10 +78,11 @@ Sağ alttaki soluk **Yönetici** bağlantısından ya da `Ctrl+Shift+A` ile aç�
 ## 📁 Proje Yapısı
 
 ```
-gdg-oyun-standi/
+GDG-Mini-Oyun-Standi/
 ├── index.html        # Tüm ekranlar (ana ekran, ad girişi, oyun, sonuç, skorlar, yönetici)
 ├── baslat.bat        # Stand bilgisayarında kiosk modunda başlatır
 ├── css/style.css
+├── docs/screenshots/ # README ekran görüntüleri
 └── js/
     ├── core.js       # Ortak yardımcılar, skor deposu, sesler, canvas ve efektler
     ├── app.js        # Platform akışı, skor tabloları, yönetici paneli
