@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>GDG Oyun Standı</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+<header class="topbar">
+  <button class="brand" id="brandBtn" title="Ana ekran">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="brand-text"><b>GDG on Campus</b><small>Mini Oyun Standı</small></span>
+  </button>
+  <div class="top-actions">
+    <button class="icon-btn" id="btnBoards">🏆 <span>Skor Tabloları</span></button>
+    <button class="icon-btn" id="btnSound">🔊 <span>Ses açık</span></button>
+    <button class="icon-btn" id="btnFull">⛶ <span>Tam ekran</span></button>
+  </div>
+</header>
+
+<main id="screens">
+
+  <section class="screen active" id="scr-home">
+    <div class="home-head">
+      <h1><span class="c-blue">Bir</span> <span class="c-red">oyun</span> <span class="c-yellow">seç</span><span class="c-green">!</span></h1>
+      <p>Oyna, rekoru kır, adın günün Top 10 listesinde parlasın.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section class="screen" id="scr-name">
+    <form class="panel" id="nameForm" autocomplete="off">
+      <div class="panel-chip" id="nameChip"></div>
+      <h2>Takma adın ne?</h2>
+      <p class="muted">Skor tablosunda görünecek. Gerçek adın olmak zorunda değil, kişisel bilgi girme.</p>
+      <input class="name-input" id="nameInput" maxlength="16" placeholder="örn. Hızlı Panda" spellcheck="false" autocomplete="off">
+      <div class="name-err" id="nameErr"></div>
+      <div class="btn-row">
+        <button type="button" class="btn ghost" id="nameBack">← Geri</button>
+        <button type="button" class="btn" id="nameRandom">🎲 Rastgele ad</button>
+        <button type="submit" class="btn primary big">Devam →</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="screen" id="scr-intro">
+    <div class="panel intro" id="introPanel"></div>
+  </section>
+
+  <section class="screen" id="scr-play">
+    <div class="hud">
+      <div class="hud-left">
+        <div class="hud-game" id="hudGame"></div>
+        <div class="hud-player" id="hudPlayer"></div>
+      </div>
+      <div class="hud-status" id="hudStatus"></div>
+      <div class="hud-box"><small>SÜRE</small><b id="hudTime">0</b></div>
+      <div class="hud-box score"><small>PUAN</small><b id="hudScore">0</b></div>
+      <button class="icon-btn pause-btn" id="btnPause" title="Duraklat (Esc)">⏸</button>
+    </div>
+    <div class="timebar" id="timebar"><i></i></div>
+    <div class="stage" id="stage"></div>
+
+    <div class="overlay" id="ovCount"><div class="cd-num" id="cdNum">3</div><div class="cd-hint" id="cdHint"></div></div>
+    <div class="overlay" id="ovPause">
+      <div class="ov-title">⏸ Duraklatıldı</div>
+      <p class="muted">Oyun penceresi odağı kaybettiği için durdu.</p>
+      <div class="btn-row">
+        <button class="btn primary big" id="btnResume">▶ Devam et</button>
+        <button class="btn ghost" id="btnQuit">Oyundan çık (skor kaydedilmez)</button>
+      </div>
+    </div>
+    <div class="overlay" id="ovEnd">
+      <div class="ov-title" id="endReason">Süre doldu!</div>
+      <div class="end-score" id="endScore">0</div>
+      <div class="end-bonus" id="endBonus"></div>
+    </div>
+  </section>
+
+  <section class="screen" id="scr-result">
+    <div class="result">
+      <div class="res-left panel">
+        <div class="panel-chip" id="resChip"></div>
+        <div class="res-name" id="resName"></div>
+        <div class="res-score" id="resScore">0</div>
+        <div class="res-label">puan</div>
+        <div class="res-rank" id="resRank"></div>
+        <div class="res-msg" id="resMsg"></div>
+        <div class="btn-col">
+          <button class="btn primary big" id="btnReplay">🔁 Tekrar oyna</button>
+          <button class="btn big" id="btnOther">🎮 Başka oyun seç</button>
+          <button class="btn ghost" id="btnNewPlayer">👋 Yeni oyuncu</button>
+        </div>
+      </div>
+      <div class="res-right panel">
+        <h3 id="resBoardTitle">Günün Top 10</h3>
+        <div id="resBoard"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="scr-boards">
+    <div class="boards">
+      <div class="boards-head">
+        <h2>🏆 Günün Top 10 Listeleri</h2>
+        <button class="btn" id="boardsBack">← Ana ekran</button>
+      </div>
+      <div class="tabs" id="boardTabs"></div>
+      <div class="panel board-panel" id="boardPanel"></div>
+    </div>
+  </section>
+
+  <section class="screen" id="scr-admin">
+    <div class="admin">
+      <div class="boards-head">
+        <h2>🔐 Yönetici Paneli</h2>
+        <button class="btn" id="admExit">Çıkış</button>
+      </div>
+      <div class="admin-grid">
+        <div class="adm-card">
+          <h3>Bugünün özeti <small id="admDay"></small></h3>
+          <table class="adm-table" id="admSum"></table>
+        </div>
+        <div class="adm-card">
+          <h3>Dışa aktar / yedek</h3>
+          <div class="adm-btns">
+            <button class="btn" id="admCsvToday">⬇ Bugünün skorları (CSV)</button>
+            <button class="btn" id="admCsvAll">⬇ Tüm skorlar (CSV)</button>
+            <button class="btn" id="admJson">⬇ Tam yedek (JSON)</button>
+            <label class="btn" for="admImport">⬆ Yedeği geri yükle (JSON)</label>
+            <input type="file" id="admImport" accept=".json,application/json" hidden>
+          </div>
+          <p class="muted small">CSV dosyaları Excel'de Türkçe karakterlerle doğrudan açılır (ayraç: noktalı virgül).</p>
+        </div>
+        <div class="adm-card wide">
+          <h3>Skor yönetimi <small>(uygunsuz takma adları silmek için)</small></h3>
+          <select id="admGame" class="adm-select"></select>
+          <div id="admList"></div>
+        </div>
+        <div class="adm-card danger">
+          <h3>Tehlikeli bölge</h3>
+          <div class="adm-btns">
+            <button class="btn red" id="admReset">♻ Günü sıfırla</button>
+            <button class="btn" id="admPin">🔑 PIN değiştir</button>
+            <button class="btn ghost" id="admWipe">🗑 Tüm verileri sil</button>
+          </div>
+          <p class="muted small">Günü sıfırlamadan önce bugünün skorları otomatik olarak CSV olarak indirilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>🔒 Skorlar yalnızca bu bilgisayarda saklanır · Hesap veya kişisel bilgi gerekmez</span>
+  <button class="admin-link" id="btnAdmin">Yönetici</button>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3 id="mTitle"></h3>
+    <div id="mBody"></div>
+    <input id="mInput" class="m-input">
+    <div class="btn-row" id="mBtns"></div>
+  </div>
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/games/balon.js"></script>
+<script src="js/games/renk.js"></script>
+<script src="js/games/isabet.js"></script>
+<script src="js/games/hafiza.js"></script>
+<script src="js/games/avci.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
