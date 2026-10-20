@@ -8,7 +8,7 @@
 
 GDG on Campus EBYÜ standındaki bilgisayar için hazırlanmış, **internetsiz çalışan 5 mini oyunluk** bir platform. Kurulum, sunucu ya da kütüphane gerekmez; saf HTML, CSS ve JavaScript ile yazılmıştır.
 
-**▶️ Tarayıcıda oyna:** https://busrayanal.github.io/GDG-Mini-Oyun-Standi/
+**▶️ Tarayıcıda oyna:** https://busrayanal.github.io/GDG-Mini-Game-Stand/
 
 <p align="center">
   <img src="docs/screenshots/ana-ekran.png" width="800" alt="Ana ekran: oyun seçimi">
@@ -78,7 +78,7 @@ Sağ alttaki soluk **Yönetici** bağlantısından ya da `Ctrl+Shift+A` ile aç�
 ## 📁 Proje Yapısı
 
 ```
-GDG-Mini-Oyun-Standi/
+GDG-Mini-Game-Stand/
 ├── index.html        # Tüm ekranlar (ana ekran, ad girişi, oyun, sonuç, skorlar, yönetici)
 ├── baslat.bat        # Stand bilgisayarında kiosk modunda başlatır
 ├── css/style.css

@@ -8,7 +8,7 @@
 
 An **offline platform with 5 mini games**, built for the GDG on Campus EBYÜ stand computer. No installation, server or libraries needed: it's written in plain HTML, CSS and JavaScript.
 
-**▶️ Play in your browser:** https://busrayanal.github.io/GDG-Mini-Oyun-Standi/
+**▶️ Play in your browser:** https://busrayanal.github.io/GDG-Mini-Game-Stand/
 
 <p align="center">
   <img src="docs/screenshots/ana-ekran.png" width="800" alt="Home screen: game selection">
@@ -81,7 +81,7 @@ Open it from the faint **Yönetici** (*Admin*) link at the bottom right or with 
 ## 📁 Project Structure
 
 ```
-GDG-Mini-Oyun-Standi/
+GDG-Mini-Game-Stand/
 ├── index.html        # All screens (home, nickname, game, result, leaderboards, admin)
 ├── baslat.bat        # Launches the stand computer in kiosk mode
 ├── css/style.css
